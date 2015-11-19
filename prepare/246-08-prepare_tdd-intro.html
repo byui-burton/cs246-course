@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CS 246 - Prepare</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+    <div id="frame"><img src="../course/cs246_large.jpg" border="0" alt="Software Design and Development CS 246" title="Software Design and Development CS 246" width="100%" />
+        <div id="content">
+
+
+
+
+        <h1>An Introduction to Testing and Test Driven Development</h1>
+        <p>Consider that you are writing a calendar program, similar to one that you may have written in CS 124. This program requires many functions, such as calculating the number of days in a month, what years were leap years, and determining the day of the week that each month started on. Many new programmers write all of these functions and then try to test them altogether, to see if the end result of the program is correct. The problem is that if it doesn't work, the error could be anywhere in the code. Similarly, the program might work for one input, but it may fail on others.
+        </p>
+        <p>A better approach is to look at each function individually, and ensure that it works perfectly in isolation. Then if a problem occurs, you can determine exactly where the error is and be confident that changing one function does not ripple through to affect the others.
+        </p>
+        <p>Take for example the function "isLeapYear", that takes an integer year as a parameter, and returns true if the year is a leap year, and false otherwise. You might begin with something like the following:
+        </p>
+        <p>boolean isLeapYear(int year) {
+            <br />&nbsp; return (year / 4 == 0);
+            <br />}</p>
+        <p>You might then decide to test your function, by entering a few different values, such as 2010, 2011, and 2012, to make sure they produce the correct result.</p>
+        <p>Later you realize that your function did not account for the special rules around century years (e.g., 1900 or 2000), so you have to go back and change the function. After doing so, you test it for both 1900 and 2000 and verify that it works.</p>
+        <p>The problem is, what if your modifications altered the function in such a way that it broke a previously tested case (e.g., 2012)? How can you be sure that it still works? One way is to go back and test those values again. This could become very time consuming and tedious to test every function. And yet, without doing so, it is difficult to be completely confident that you have not introduced other bugs.</p>
+        <p>Enter Automated Unit Testing</p>
+        <p>Recognizing that this function takes input and produces outputs, we could write a program that checks several cases and throws and exception, or fires an assert if the incorrect value if produced. For example:</p>
+        <p>void testLeapYear() {
+            <br />&nbsp; assert (isLeapYear(2010) == false);
+            <br />&nbsp; assert (isLeapYear(2011) == false);
+            <br />&nbsp; assert (isLeapYear(2012) == true);
+            <br />&nbsp; assert (isLeapYear(1900) == false);
+            <br />&nbsp; assert (isLeapYear(2000) == true);
+            <br />}</p>
+        <p>This way, in the future if you have to make changes to the function, you simply run this test function again an all of your test cases will run! You can write similar test functions for all of your functions, and then feel confident that each unit is working independently. This is called unit testing.</p>
+        <p>When should tests be written?</p>
+        <p>Initially, you might think that you should write the function first, and then see if it works...That's a natural approach to the problem. How could you see if it works before you write it?</p>
+        <p>But actually, if we were to create a stub for our function (so that it compiles and takes the right parameters and returns the right data type), could we not write the test function above? Of course, the values that were returned would not be correct, but the code would compile and run through our tests. Then we could systematically go through and implement the function, making sure that it was written such that it accommodated all of the tests we could think of. Then, once the tests all pass, we would know we are done.</p>
+        <p>This is a very powerful concept called, Test Driven Development.</p>
+        <p>It changes the way we approach the problem to consider the correct functionality and how our function will be called/used by others, before we write a single line of it. We think about normal cases, weird cases, null values, edge cases, and everything that might go right or wrong, before we ever write a line of code for the function itself. Then, when the function is written, we know we have account for these cases, and better yet, we know every time a change is made to the function in the future, it will continue to produce the correct results in all of those different cases.</p>
+        <p>What makes this even better is that there have been a number of tools written that make running tests easier. So that, for example, when one test fails, the program reports which one failed, but then continues on to the next one. Additionally, these tools make it easy to run certain tests at a time, or to note that a certain test should produce an exception, and if it does not, then the code has failed. This week you will be introduced to these tools for Java and Android development.</p>
+
+
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
