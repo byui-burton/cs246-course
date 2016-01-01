@@ -307,3 +307,18 @@ table#bh tr:nth-child(even) td {
   vertical-align: middle;
   padding: 8px;
 }
+
+/*******************************
+ * Code
+ *******************************/
+.code {
+    display: block;
+    unicode-bidi: embed;
+    font-family: monospace;
+    white-space: pre;
+    margin-bottom: 20px;
+}
+
+.user-input {
+	text-decoration: underline;
+}
