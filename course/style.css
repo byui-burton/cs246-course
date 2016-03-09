@@ -41,6 +41,18 @@ pre code {
 	border: 1px solid #CCC;
 }
 
+img.screenshot {
+	display: block;
+    max-height: 60px;
+    margin: 0 auto 0.5em auto;
+}
+
+img.screenshot-large {
+	display: block;
+    max-height: 200px;
+    margin: 0 auto 0.5em auto;
+}
+
 p code, li code {
 	color: #A10200;
 	font-size: 18px;
@@ -48,6 +60,10 @@ p code, li code {
 	background: #FFF;
 	border: 1px solid #CCC;
 	padding: 2px 6px;
+}
+
+article ol li code {
+	margin-left: 0.5em;
 }
 
 .java.hljs {
@@ -65,6 +81,17 @@ article p {
 	font-size: 22px;
 	line-height: 1.4em;
 	margin-bottom: 1em;
+}
+
+article em {
+	font-style: italic;
+	color: #666;
+	font-size: 17px;
+}
+
+article strong {
+	font-weight: bold;
+	color: #CC0000;
 }
 
 article h2 {
@@ -114,7 +141,7 @@ article h3:before {
 
 article li p {
 	font-size: 18px;
-	margin-bottom: 0.25em;
+	margin-bottom: 0.5em;
 	color: #040404;
 	margin-left: 10px;
 }
