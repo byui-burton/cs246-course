@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CS 246 - Ponder and Prove</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+    <div id="frame"><img src="../course/cs246_large.jpg" border="0" alt="Software Design and Development CS 246" title="Software Design and Development CS 246" width="100%" />
+        <div id="content">
+
+
+
+        <h1><span style="font-family: verdana,geneva;">Spiritual Journal XML Parsing</span></h1>
+
+        <h2><span style="font-family: verdana,geneva;">Overview</span></h2>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">Your task is to use Java to parse an XML document for a spiritual insight journal, and instantiate classes that relate to the various tags. The XML document has a root element, journal, that contains multiple entry elements. Each entry has a date, and then potential child elements of 0 or more scriptures, 0 or more topics and content. For example, consider the following:</span></p>
+        <p><span style="font-family: 'courier new', courier; font-size: 10pt;">&lt;journal&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp;&lt;entry date="2014-12-16"&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp; &nbsp;&lt;scripture book="Hebrews" chapter="11" startVerse="1" /&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp; &nbsp;&lt;scripture book="Alma" chapter="32" startVerse="21" endVerse="43" /&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp; &nbsp;&lt;topic name="Faith" /&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp; &nbsp;&lt;content&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp; &nbsp; &nbsp;Reading in Hebrews 11:1 and Alma 32:21-43 makes me think about faith.<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp; &nbsp;&lt;/content&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp;&lt;/entry&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp;&lt;entry date="2014-12-17"&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp; &nbsp;&lt;topic name="Love" /&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp; &nbsp;&lt;content&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp; &nbsp; &nbsp;I need to find a way to develop more charity.<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp; &nbsp;&lt;/content&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp;&lt;/entry&gt;<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&lt;/journal&gt;</span></p>
+        <h2><span style="font-family: verdana,geneva;">Instructions</span></h2>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">For this assignment, you should create the following classes:</span></p>
+        <ul>
+            <li><span style="font-family: verdana,geneva; font-size: 10pt;">Journal</span></li>
+            <li><span style="font-family: verdana,geneva; font-size: 10pt;">Entry</span></li>
+            <li><span style="font-family: verdana,geneva; font-size: 10pt;">Scripture</span></li>
+            <li><span style="font-family: verdana,geneva; font-size: 10pt;">Topic</span></li>
+        </ul>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">In addition, please make your Scripture and Topic implement the following Annotation interface:</span></p>
+        <p><span style="font-family: 'courier new', courier; font-size: 10pt;">public interface Annotation {<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">&nbsp; &nbsp; String getDisplayText();<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">}</span></p>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">For relationships, your Journal class should contain a list of entries, and your entries should contain a list of annotation objects. For simplicity, you may store the the date of the entries as a String.</span></p>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">Your program should accept a filename as a command line parameter. It should then parse the XML document and create the objects listed above. Finally, after finishing all of the parsing, it should display each entry as follows:</span></p>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;"><span>For parsing the XML document in Java, you should use the DOM approach (i.e., use the classes: javax.xml.parsers.DocumentBuilder and org.w3c.dom.Document).</span></span>
+        </p>
+        <p><span style="font-family: 'courier new', courier; font-size: 10pt;">-----<br /></span><span style="font-size: 10pt; font-family: 'courier new', courier;">Entry<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">Date: 2014-12-16<br /></span><span style="font-size: 10pt; font-family: 'courier new', courier;">Content:<br /></span><span style="font-size: 10pt; font-family: 'courier new', courier;">Reading in Hebrews 11:1 and Alma 32:21-43 makes me think about faith.<br /></span><span style="font-size: 10pt; font-family: 'courier new', courier;">Annotations:<br /></span><span style="font-size: 10pt; font-family: 'courier new', courier;">-Hebrews 11:1<br /></span><span style="font-size: 10pt; font-family: 'courier new', courier;">-Alma 32:21-43<br /></span><span style="font-size: 10pt; font-family: 'courier new', courier;">-Faith<br /></span><span style="font-size: 10pt; font-family: 'courier new', courier;"></span></p>
+        <p><span style="font-size: 10pt; font-family: 'courier new', courier;">-----<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">Entry<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">Date: 2014-12-17<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">Content:<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">I need to find a way to develop more charity.<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">Annotations:<br /></span><span style="font-family: 'courier new', courier; font-size: 10pt;">-Love</span></p>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">Note: It's ok if your whitespace isn't perfect before and after the content.</span></p>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">You are encouraged to create your own files for debugging, however, if it is helpful, you may also see <a href="../attachments/246-03-burtonJournal.xml" target="_blank">an example spiritual journal</a> that may assist you in your testing and development.</span></p>
+        <h2><span style="font-family: verdana,geneva;">Submission</span></h2>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">Don't forget to strictly adhere to our style guide. Also don't forget to collaborate and identify collaborators (with a comment at the top the Java file that contains your main method).</span></p>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">Please create a zip file containing all of your source code and upload this to I-Learn by Saturday at 11:59 PM.</span></p>
+        <h2><span style="font-family: verdana,geneva;">Grading Rubric</span></h2>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">This assignment will be evaluated according to the following rubric.</span></p>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">10 - Classes are created for Journal, Entry, Scripture, and Topic</span></p>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">15 - Annotation interface is created and implemented by Scripture and Topic</span></p>
+        <p><span style="font-family: verdana,geneva; font-size: 10pt;">15 - Entry objects are correctly created and filled with date and content when the XML is parsed</span></p>
+        <p><span style="font-family: verdana,geneva;">15 - Scripture and Topic objects are correctly created, filled with data and attached to Entry objects when the XML is parsed.</span></p>
+        <p><span style="font-family: verdana,geneva;">15 - Objects are iterated through to produce the correct output</span></p>
+        <p><span style="font-family: verdana,geneva;">15 - Parsing methods are cohesive and easy to read</span></p>
+        <p><span style="font-family: verdana,geneva;">10 - Strictly adhered to the code conventions</span></p>
+        <p><span style="font-family: verdana,geneva;">5 - Collaborated and identified collaborators
+
+
+
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
