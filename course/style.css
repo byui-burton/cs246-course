@@ -116,6 +116,30 @@ article h4 {
 	font-weight: bold;
 }
 
+aside.pull-right, aside.pull-left {
+	position: absolute;
+	right: 5px;
+	width: 200px;
+	background: #006AB9;
+	padding: 13px;
+	margin: 0 1.5%;
+}
+
+aside.pull-left {
+	left: 5px;
+	right: 0px;
+}
+
+aside.pull-right p, aside.pull-left p {
+	color: white;
+	font-size: 16px
+}
+
+aside.pull-right strong, aside.pull-left strong {
+	color: black;
+	font-size: 18px;
+}
+
 /* Lists */
 article ul  {
 	margin: 0 0 1em 2em;
@@ -153,4 +177,14 @@ article ul li p:before {
 	margin-right: 0.5em;
 }
 
+@media only screen and (max-width: 1250px) {
+    aside.pull-right, aside.pull-left {
+    	width: 96.5%;
+    	position: relative;
+		padding: 13px;
+		margin: 0 0 15px 0;
+		right: 0px;
+		left: 0px;
+	}
 
+}
