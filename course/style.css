@@ -170,6 +170,11 @@ article li p {
 	margin-left: 10px;
 }
 
+article ol ul li {
+	list-style: none;
+	border-left: none;
+}
+
 article ul li p:before {
 	content: "»";
 	color: #006AB9;
