@@ -49,7 +49,7 @@ img.screenshot {
 
 img.screenshot-large {
 	display: block;
-    max-height: 200px;
+    max-height: 300px;
     margin: 0 auto 0.5em auto;
 }
 
@@ -138,6 +138,11 @@ aside.pull-right, aside.pull-left {
 aside.pull-left {
 	left: 5px;
 	right: 0px;
+}
+
+img.pull-left {
+	float: left;
+	margin-right: 10px;
 }
 
 aside.pull-right p, aside.pull-left p {
