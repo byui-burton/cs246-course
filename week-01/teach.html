@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>CS 246 - Teach 1.0</title>
+    <title>CS 246 - 01 Teach : Team Activity</title>
     <link rel="stylesheet" type="text/css" href="../course/style.css" />
 </head>
 
@@ -13,7 +13,8 @@
     <h1>Software Design and Development :: CS 246</h1>
 </div>
     <article>
-        <h2>Teach 1.0 :: Practice with Git</h2>
+        <h2>01 Teach : Team Activity</h2>
+        <p class="subtitle">Practice with Git</p>
 
         <h3>Objectives</h3>
 
@@ -104,7 +105,7 @@ git status
         </ol>
         <p>Congratulations! You now know how to pull changes from GitHub to your local repository.</p>
 
-        <h4>Part III: Resolving Conflicts</h4>
+        <h4 class="stretch">🌟Stretch Challenge🌟</h4>
         <p>When multiple developers try to change the same files at the same time, this can result in what is called a <em>merge conflict</em>. By default, git is pretty good at merging changes during pulls and pushes. Sometimes however, it can't figure out the best choice, and so it leaves it up to you.</p>
         <p>We're going to use GitHub's direct editor to simulate a merge conflict.</p>
 
@@ -132,12 +133,9 @@ hint: to the same ref. You may want to first integrate the remote changes
 hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 </code></pre>
-
+            <p>Remember, one of the fundamental rules of using git is:</p>
+            <p><strong>Always pull before you push.</strong></p>
             </li>
-                            <aside class='pull-right'>
-                    <p>One of the fundamental rules of sharing code with GitHub is:</p>
-                    <p><strong>Always pull before you push.</strong></p>
-                </aside>
             <li>
                 <p>Attempt to fix this problem by executing <code>git pull</code>. This will also fail:</p>
 <pre><code class="bash">CONFLICT (content): Merge conflict in sample.txt
@@ -174,7 +172,9 @@ git rebase --continue
             </li>
         </ol>
         <p>Congratulations! You now know how to resolve simple merge conflicts using git.</p>
-        <p><strong>Make sure to complete the accompanying quiz for this assignment on I-Learn.</strong></p>
+        <p>Make sure everyone on your team understands and receives a copy of this code.</p>
+
+        <p><strong>Be sure to complete the accompanying quiz for this assignment on I-Learn.</strong></p>
     </article>
 
    <script src="../course/js/highlight/highlight.pack.js"></script>
